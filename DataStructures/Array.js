@@ -78,4 +78,10 @@ class Array{
         }
     }
 
+    size(){
+        return this.#length
+    }
+
+
 }
+export {Array}
