@@ -60,7 +60,7 @@ class Array{
                 this.#array[index]=value
             }
             else{
-                throw Error(`${typeof value} is the same Type of ${this.#type}`)
+                throw Error(`${typeof value} is Not the same Type of ${this.#type}`)
             }
         }
         else{
@@ -82,9 +82,28 @@ class Array{
         return this.#length
     }
 
-    getValue(){
+    getArray(){
         return this.#array
     }
+
+    getIndexof(value){
+        if(typeof value===this.#type){
+            for(let i =0 ; i< this.#length ;i++){
+                if(this.#array[i]===value){
+                    return i
+                }
+                if(i==this.#length-1 && this.#array[i]!==value){
+                    return -1
+                }
+                
+            }
+            
+        }
+        else{
+            throw Error(`${typeof value} is Not the same Type of ${this.#type}`)
+        }
+    }
+
 
 
 }
