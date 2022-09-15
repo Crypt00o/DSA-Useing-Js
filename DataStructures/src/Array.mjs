@@ -105,6 +105,21 @@ class Array{
     }
 
 
+    removeValueof(index){
+        if(typeof index==='number' && index<this.#length){
+            for(let i=index;i<this.#length;i++){
+                if(i+1===this.#length){
+                this.#array[i]=this.#defaultValue()
+                }else{
+                    this.#array[i]=this.#array[i+1]
+                }
+            }
+        }
+        else{
+            throw Error(`Error Index ${index} is Not Valid Array Index `)
+        }   
+    }
+
 
 }
 export {Array}
