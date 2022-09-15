@@ -11,14 +11,14 @@ class Array{
             this.#length=length
         }
         else{
-            throw new Error(`Error : Length ${length} is Not Valid Array Length `)
+            throw  Error(`Length ${length} is Not Valid Array Length `)
         }
         if(this.#types.includes(type)){
             this.#type=type
             this.#setDefaultValues()
         }
         else{
-            throw new Error(`Error : Type ${type} is Not Supported `)
+            throw Error(`Type ${type} is Not Supported `)
         }
         
 
@@ -50,7 +50,7 @@ class Array{
         for (let i=0;i<this.#length;i++){
             this.#array[i]=this.#defaultValue()
         }
-        console.log(this.#array)
+        
     }
 
 
@@ -60,11 +60,11 @@ class Array{
                 this.#array[index]=value
             }
             else{
-                throw new Error(`Error : ${typeof value} is the same Type of ${this.#type}`)
+                throw Error(`${typeof value} is the same Type of ${this.#type}`)
             }
         }
         else{
-            throw new Error(`Error : Index ${index} is Not Valid Index For This Array `)
+            throw Error(`Index ${index} is Not Valid Index For This Array `)
         }
     }
 
@@ -74,12 +74,16 @@ class Array{
             return this.#array[index]
         }
         else{
-            throw new Error(`Error : Index ${index} is Not Valid Array Index `)
+            throw Error(`Error Index ${index} is Not Valid Array Index `)
         }
     }
 
-    size(){
+    getSize(){
         return this.#length
+    }
+
+    getValue(){
+        return this.#array
     }
 
 
