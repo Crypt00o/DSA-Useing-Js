@@ -155,6 +155,25 @@ class Array{
         }
     }
 
+    // Get Last Index Of  Element  By It,s Value 
+    // Time Comlexity = O(n) , where n=number of array elements
+
+    getLastIndexof(value){
+        if(typeof value===this.#type){
+            for(let i=this.#length-1 ; i>=0 ; i--){
+                if(this.#array[i]===value){
+                    return i
+                }
+                if(i===0 && this.#array[i]!==value){
+                    return -1
+                }
+            }
+        }
+        else{
+            throw Error(`${typeof value} is Not the same Type of ${this.#type}`)
+        }
+    }
+
     // Removeing An Element From Spefic Index
     // Time Comlexity = O(n) , where n=number of array elements
 
