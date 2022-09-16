@@ -9,8 +9,8 @@ class Array{
     #types=['string','boolean','number','bigint','object']
     #array=[]
 
-    /* Can Create New Instence By :
-        let array= new Array(type,length,array)
+    /* Can Create New Instance By :
+        let array= new Array(type,length,array initial value(just one time))
         like :
         let array= new Array('string',5)
         or :
