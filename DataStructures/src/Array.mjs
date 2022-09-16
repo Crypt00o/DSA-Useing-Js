@@ -1,11 +1,21 @@
 "use strict";
 
 class Array{
-    
+
+    //Private Properies Of Array Class 
+
     #length=null
     #type=null
     #types=['string','boolean','number','bigint','object']
     #array=[]
+
+    /* Can Create New Instence By :
+        let array= new Array(type,length,array)
+        like :
+        let array= new Array('string',5)
+        or :
+        let array= new Array('string',5,['iam','eslam','mohamed'])
+    */
 
     constructor(type,length,array){
 
@@ -47,7 +57,7 @@ class Array{
         }
     }
 
-
+    //Setting Default Value For Each Type 
 
     #defaultValue(){
 
@@ -66,7 +76,12 @@ class Array{
         }
     }
 
+    /* this is Private Method Which Setting The Default Value 
+    Suitable For Every Type By loop With Class Array.length and Then 
+    Assign Every Element With calling Private Method defaultValue()
 
+    Time Complexity=O(n) , where n=length
+    */
 
     #setDefaultValues(){
         
@@ -76,6 +91,8 @@ class Array{
         
     }
 
+    //Setting Value of Spefic Index
+    // Time Complexity = O(1) 
 
     setValueof(index,value){
         if(typeof index==='number' && index<this.#length){
@@ -91,6 +108,8 @@ class Array{
         }
     }
 
+    //Access Value of Spefic Index
+    // Time Complexity = O(1) 
 
     getValueof(index){
         if(typeof index==='number' && index<this.#length){
@@ -101,14 +120,23 @@ class Array{
         }
     }
 
+    // Get the Array Length 
+    // Time Comlexity = O(1)
+
     getSize(){
         return this.#length
     }
+
+    // Get the Array Value 
+    // Time Comlexity = O(1)
 
     getArray(){
         return this.#array
     }
 
+    // Get Index Of  Element  By It,s Value 
+    // Time Comlexity = O(n) , where n=number of array elements
+    
     getIndexof(value){
         if(typeof value===this.#type){
             for(let i =0 ; i< this.#length ;i++){
@@ -127,6 +155,8 @@ class Array{
         }
     }
 
+    // Removeing An Element From Spefic Index
+    // Time Comlexity = O(n) , where n=number of array elements
 
     removeValueof(index){
         if(typeof index==='number' && index<this.#length){
@@ -143,6 +173,8 @@ class Array{
         }   
     }
 
+    // Inserting An Element In Spefic Index
+    // Time Comlexity = O(n) , where n=number of array elements
 
     insertValueof(index,value){
         if(typeof index==='number' && index<this.#length){
@@ -162,6 +194,8 @@ class Array{
     }
 
 
+    // Reversing The Array
+    // Time Complexity = O(log n) , where n = number of array elements
 
     reverse(){
         for(let i=0,j=this.#length-1;i<=this.#length/2;j--,i++){
