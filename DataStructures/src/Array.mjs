@@ -120,17 +120,17 @@ class Array{
         }
     }
 
-    // Get the Array Length 
+    // Get the Array Length (Getter) 
     // Time Comlexity = O(1)
 
-    getSize(){
+    get length(){
         return this.#length
     }
 
-    // Get the Array Value 
+    // Get the Array Value  (Getter)
     // Time Comlexity = O(1)
 
-    getArray(){
+   get value(){
         return this.#array
     }
 
@@ -227,3 +227,7 @@ class Array{
 
 
 export {Array}
+
+
+let array=new Array('number',5,[1,2,3,4])
+console.log(array.value)
