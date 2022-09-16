@@ -228,6 +228,3 @@ class Array{
 
 export {Array}
 
-
-let array=new Array('number',5,[1,2,3,4])
-console.log(array.value)
