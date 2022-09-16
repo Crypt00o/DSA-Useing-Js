@@ -7,7 +7,7 @@ class Array{
     #types=['string','boolean','number','bigint','object']
     #array=[]
 
-    constructor(type,length){
+    constructor(type,length,array){
 
         if(typeof length==='number' && !isNaN(length) && length>=0 ){
             this.#length=length
@@ -22,8 +22,29 @@ class Array{
         else{
             throw Error(`Type ${type} is Not Supported `)
         }
-        
-
+    
+        if(array){
+            if(typeof array==='object' && array.hasOwnProperty('length')){
+                if(array.length<=this.#length){
+                    for(let i =0 ; i<array.length;i++){
+                        if(typeof array[i]===this.#type ){
+                            this.#array[i]=array[i]
+                            continue
+                        }
+                        else{
+                            throw Error(`Type ${typeof array[i]} is not the same Type ${this.#type}`)
+                        }
+                    }
+                    
+                }
+                else{
+                    throw Error(`Array is Out Of Memory, [Overflow]`)
+                }
+            }
+            else{
+                throw Error('Can,t Assign Array')
+            }
+        }
     }
 
 
@@ -122,7 +143,7 @@ class Array{
         }   
     }
 
-    
+
 
     reverse(){
         for(let i=0,j=this.#length-1;i<=this.#length/2;j--,i++){
