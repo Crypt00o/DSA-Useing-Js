@@ -1,3 +1,5 @@
+"use strict";
+
 class Array{
     
     #length=null
@@ -120,6 +122,16 @@ class Array{
         }   
     }
 
+    
 
+    reverse(){
+        for(let i=0,j=this.#length-1;i<=this.#length/2;j--,i++){
+            let temperory=this.#array[i]
+            this.#array[i]=this.#array[j]
+            this.#array[j]=temperory
+        }
+    }
 }
+
+
 export {Array}
