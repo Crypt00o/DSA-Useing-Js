@@ -97,7 +97,7 @@ class Array{
             return this.#array[index]
         }
         else{
-            throw Error(`Error Index ${index} is Not Valid Array Index `)
+            throw Error(`Index ${index} is Not Valid Index For This Array `)
         }
     }
 
@@ -139,8 +139,26 @@ class Array{
             }
         }
         else{
-            throw Error(`Error Index ${index} is Not Valid Array Index `)
+            throw Error(`Index ${index} is Not Valid Index For This Array `)
         }   
+    }
+
+
+    insertValueof(index,value){
+        if(typeof index==='number' && index<this.#length){
+            if(typeof value===this.#type){
+             for(let i=this.#length-1;i>index;i--){
+             this.#array[i]= this.#array[i-1]
+            }
+            this.#array[index]=value
+        }
+            else{
+                throw Error(`${typeof value} is Not the same Type of ${this.#type}`)
+            }
+        }
+        else{
+            throw Error(`Index ${index} is Not Valid Index For This Array `)
+        }
     }
 
 
